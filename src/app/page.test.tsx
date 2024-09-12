@@ -11,7 +11,6 @@ describe('CSVReader', () => {
       .create(
         <ImportCSVReader
           onUploadAccepted={handleUploadAccepted}
-          label="Chargez votre offre"
         />
       )
       .toJSON();
