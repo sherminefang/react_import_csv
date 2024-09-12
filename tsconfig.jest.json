@@ -1,0 +1,12 @@
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+      "module": "commonjs",
+      "jsx": "react",
+      "moduleResolution": "node", 
+      "allowSyntheticDefaultImports": true,
+      //"checkJs": false,
+      //"jsxImportSource": "preact",
+      "allowUmdGlobalAccess": true,
+    },
+  }

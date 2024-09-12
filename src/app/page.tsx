@@ -6,7 +6,7 @@ export default function Home() {
     <div className="container" style={{paddingBlockStart: "1rem", paddingBlockEnd: "200px"}}>
         <h1 style={{textAlign: "center", paddingBlock: "1rem"}}>CSV IMPORT</h1>
        {/* <ImportCSV /> */}
-       <ImportCSVReader  label="Chargez votre offre" />
+       <ImportCSVReader />
     </div>
   )  
 }

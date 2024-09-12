@@ -4,7 +4,7 @@ import React, {useState} from "react";
 import BootstrapTable from "react-bootstrap-table-next";
 import Button from "react-bootstrap/Button";
 import paginationFactory from "react-bootstrap-table2-paginator";
-import filterFactory, { textFilter } from 'react-bootstrap-table2-filter';
+import filterFactory from 'react-bootstrap-table2-filter';
 import ToolkitProvider, { Search } from 'react-bootstrap-table2-toolkit';
 import { useCSVReader } from 'react-papaparse';
 
@@ -18,7 +18,6 @@ export const ImportCSVReader: React.FC<ImportCSVReaderProps> = (
   const { CSVReader } = useCSVReader();
   const { onUploadAccepted } = props;
   const [array, setArray] = useState([]);
-  const headerKeys = Object.keys(Object.assign({}, ...array));
 
   const { SearchBar } = Search;
   const columns = [
