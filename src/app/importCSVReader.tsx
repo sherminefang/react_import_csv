@@ -8,13 +8,16 @@ import filterFactory, { textFilter } from 'react-bootstrap-table2-filter';
 import ToolkitProvider, { Search } from 'react-bootstrap-table2-toolkit';
 import { useCSVReader } from 'react-papaparse';
 
-interface ImportCSV {
+interface ImportCSVReaderProps {
   onUploadAccepted?: ((data: any, file?: any) => void) | undefined;
 }
 
-export function ImportCSV() {
-  const [array, setArray] = useState([]);
+export const ImportCSVReader: React.FC<ImportCSVReaderProps> = (
+  props: ImportCSVReaderProps
+) => {
   const { CSVReader } = useCSVReader();
+  const { onUploadAccepted } = props;
+  const [array, setArray] = useState([]);
   const headerKeys = Object.keys(Object.assign({}, ...array));
 
   const { SearchBar } = Search;
@@ -45,8 +48,8 @@ export function ImportCSV() {
   ];
 
   return (
-      <>
-          <CSVReader
+    <>
+    <CSVReader
             onUploadAccepted={(results:any) => {
               setArray(results.data);
             }}
@@ -90,6 +93,7 @@ export function ImportCSV() {
               )
             }
           </ToolkitProvider>
-      </>
+    </>
   );
-}
+};
+

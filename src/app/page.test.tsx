@@ -1,8 +1,21 @@
 import {describe, expect, test} from '@jest/globals';
-import {ImportCSV} from './importCSV';
+import renderer from 'react-test-renderer';
+import {ImportCSVReader} from './importCSVReader';
 
-describe('import csv module', () => {
-  test('adds 1 + 2 to equal 3', () => {
-    expect(sum(1, 2)).toBe(3);
+// eslint-disable-next-line no-undef
+describe('CSVReader', () => {
+  // eslint-disable-next-line no-undef
+  it('should match snapshot', async function () {
+    const handleUploadAccepted = jest.fn().mockImplementation();
+    const tree = renderer
+      .create(
+        <ImportCSVReader
+          onUploadAccepted={handleUploadAccepted}
+          label="Chargez votre offre"
+        />
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
   });
 });
+
