@@ -1,7 +1,9 @@
-import { config } from "process";
+import type { Config } from 'jest'
+import nextJest from 'next/jest.js'
 
-export { };
-module.exports = {
+const createJestConfig = nextJest({ dir: './' })
+
+const customJestConfig: Config = {
   collectCoverage: true,
   collectCoverageFrom: ['src/**/*.{ts,tsx}', '!src/**/*.d.ts'],
   coverageDirectory: 'coverage',
@@ -9,7 +11,6 @@ module.exports = {
   transform: {
     ".(ts|tsx)": ["babel-jest", {config: "babel.config.js" } ],
   },
-
   coveragePathIgnorePatterns: [
     "/node_modules/",
     "/src/app",
@@ -19,10 +20,12 @@ module.exports = {
     "jest.config.ts",
     "next.config.mjs",
     "next-env.d.ts"
-
   ],
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
 }
+
+export { };
+module.exports = createJestConfig(customJestConfig);
 
 // module.exports = {
 //   collectCoverage: true,
