@@ -1,5 +1,3 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import "react-bootstrap-table-next/dist/react-bootstrap-table2.min.css";
 import React, {useState} from "react";
 import BootstrapTable from "react-bootstrap-table-next";
 import Button from "react-bootstrap/Button";
@@ -64,7 +62,7 @@ export const ImportCSVReader: React.FC<ImportCSVReaderProps> = (
             ProgressBar
           }: any) => (
             <>
-              <Button  {...getRootProps()} style={{marginBlockEnd:"1rem"}} >
+              <Button data-testid="btn" {...getRootProps()} style={{marginBlockEnd:"1rem"}} >
                   Browse file
                 </Button>
                   {acceptedFile && acceptedFile.name}

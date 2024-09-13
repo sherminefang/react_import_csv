@@ -1,11 +1,13 @@
 "use client";
-//import { ImportCSV} from "./importCSV"
+import 'bootstrap/dist/css/bootstrap.min.css';
+import "react-bootstrap-table-next/dist/react-bootstrap-table2.min.css";
+import React from 'react';
 import { ImportCSVReader } from "./importCSVReader";
+
 export default function Home() {
   return (
-    <div className="container" style={{paddingBlockStart: "1rem", paddingBlockEnd: "200px"}}>
+    <div data-testid="container" className="container" style={{paddingBlockStart: "1rem", paddingBlockEnd: "200px"}}>
         <h1 style={{textAlign: "center", paddingBlock: "1rem"}}>CSV IMPORT</h1>
-       {/* <ImportCSV /> */}
        <ImportCSVReader />
     </div>
   )  
